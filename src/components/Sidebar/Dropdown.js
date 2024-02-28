@@ -8,7 +8,7 @@ const Dropdown = ({linkredirect5,linkredirect6,linkredirect4,linkredirect3,linkr
     <div id="collapsePages" className="collapse show" aria-labelledby="headingPages"
     data-parent="#accordionSidebar">
     <div className="bg-white py-2 collapse-inner rounded">
-        <h6 className="collapse-header">{first}</h6>
+        <Link className="collapse-item" to={"/"+linkredirect1}>{first}</Link>
         <Link className="collapse-item" to={"/"+linkredirect1}>{second}</Link>
         <Link className="collapse-item" to={`/${linkredirect2}`}>{third}</Link>
        {fourth && <Link className="collapse-item" to={`/${linkredirect3}`}>{fourth}</Link>}

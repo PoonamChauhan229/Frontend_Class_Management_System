@@ -8,10 +8,9 @@ const AllButtons = () => {
     <>
       <div className="container-fluid">
         {/* <!-- Page Heading --> */}
-        <h1 className="h3 mb-4 text-gray-800">Buttons</h1>
 
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-12">
 
         {
             ButtonsDataComponent.map((element)=>
@@ -20,15 +19,6 @@ const AllButtons = () => {
             )
         }
             
-          </div>
-
-          <div className="col-lg-6">
-          {
-            ButtonsDataComponent2.map((element)=>
-          
-            <SingleButton {...element}/>
-            )
-        }
           </div>
         </div>
       </div>

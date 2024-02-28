@@ -6,9 +6,8 @@ const Component = () => {
     const [open,setOpen]=useState(false)
     const ComponentDropdownData=[
         {
-          first:"CUSTOM COMPONENTS",
-          second:"Button",
-          third:"Cards",
+          first:"Batch Creation",
+          second:"View Batches",
           linkredirect1:"button",
           linkredirect2:"cards"
         }       
@@ -26,7 +25,7 @@ const Component = () => {
                     onClick={handleDropdown}
                     >
                     <i className="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Batches</span>
                      </Link>
                 {/* Dropdown start */}
                 {

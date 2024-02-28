@@ -6,7 +6,7 @@ const SingleButton = ({btnName,btnBody1,btnBody2,btnCode1,btnBody3}) => {
     <>
         <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">{btnName}</h6>
+                    <h6 className="m-0 font-weight-bold text-primary">Batch creation</h6>
                 </div>
                 <div className="card-body">
                     <p>{btnBody1}</p>
