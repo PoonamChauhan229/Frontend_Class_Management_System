@@ -8,8 +8,8 @@ const Component = () => {
         {
           first:"Batch Creation",
           second:"View Batches",
-          linkredirect1:"button",
-          linkredirect2:"cards"
+          linkredirect1:"createbatches",
+          linkredirect2:"viewbatches"
         }       
       ]
       const handleDropdown=()=>{

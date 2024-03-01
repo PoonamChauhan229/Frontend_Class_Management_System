@@ -12,6 +12,8 @@ import AllAnimation from "./components/Sidebar/UtilitiesSidebar/Animation/AllAni
 import AllOther from "./components/Sidebar/UtilitiesSidebar/Other/AllOther";
 import Table from "./components/Sidebar/Table";
 import Charts from "./components/Sidebar/Charts";
+import ViewBatches from './components/Sidebar/ComponentSidebar/Batches/ViewBatches';
+import CreateBatch from './components/Sidebar/ComponentSidebar/Batches/CreateBatch';
 
 const MainComponentRoutes = () => {
 
@@ -47,6 +49,8 @@ const MainComponentRoutes = () => {
         <Route path="/other" element={<AllOther/>}/>
         <Route path="/tables" element={<Table/>}/>
         <Route path="/charts" element={<Charts/>}/>
+        <Route path='/viewbatches' element={<ViewBatches/>}/>        
+        <Route path='/createbatches' element={<CreateBatch/>}/>
 
     </Routes>
     </div>

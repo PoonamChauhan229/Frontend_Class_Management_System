@@ -9,7 +9,7 @@ const Dropdown = ({linkredirect5,linkredirect6,linkredirect4,linkredirect3,linkr
     data-parent="#accordionSidebar">
     <div className="bg-white py-2 collapse-inner rounded">
         <Link className="collapse-item" to={"/"+linkredirect1}>{first}</Link>
-        <Link className="collapse-item" to={"/"+linkredirect1}>{second}</Link>
+        <Link className="collapse-item" to={"/"+linkredirect2}>{second}</Link>
         <Link className="collapse-item" to={`/${linkredirect2}`}>{third}</Link>
        {fourth && <Link className="collapse-item" to={`/${linkredirect3}`}>{fourth}</Link>}
         <div className="collapse-divider"></div>
