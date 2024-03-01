@@ -5,12 +5,12 @@ const CreateBatch = () => {
     <div className="container border">
       <div className="row justify-content-center">
         <div className="col-xl-11 col-lg-12 col-md-9">
-          <div className="card o-hidden border-0 shadow-lg my-5">
+          <div className="card o-hidden border-0 shadow-lg">
             <div className="card-body p-0">
               <div className="row">
                 <div className='col-lg-12'>
                   <div className="px-4 pt-2">
-                    <h1 className="h5 text-gray-900 mb-4 mt-2">Add New Batch!</h1>
+                    <h1 className="h5 text-gray-900 mb-4 mt-2">Add New Batch</h1>
                   </div>
                 </div>
               </div>
@@ -24,6 +24,16 @@ const CreateBatch = () => {
                           type="date"
                           className="form-control "
                           id="batchStartDate"
+                          style={{fontSize:"14px"}}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="batchEndDate" className="form-label">Batch End Date</label>
+                        <input
+                          type="date"
+                          className="form-control "
+                          id="batchEndDate"
+                          style={{fontSize:"14px"}}
                         />
                       </div>
                       <div className="form-group">
@@ -49,15 +59,7 @@ const CreateBatch = () => {
                           className="form-control "
                           id="batchActualSize"
                         />
-                      </div> 
-                      <div className="form-group">
-                        <label htmlFor="location" className="form-label">Location</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="location"
-                        />
-                      </div>                     
+                      </div>                                          
                     </form>
                   </div>
                 </div>
@@ -68,7 +70,7 @@ const CreateBatch = () => {
                       
                       <div className="form-group">
                         <label htmlFor="status" className="form-label">Status</label>
-                        <select className="form-control " id="status">
+                        <select className="form-control " id="status" style={{fontSize:"14px"}}>
                           <option value="active">Active</option>
                           <option value="inactive">Inactive</option>
                           <option value="pending">Pending</option>
@@ -103,7 +105,7 @@ const CreateBatch = () => {
                                             
                       <div className="form-group">
                         <label htmlFor="installmentsApplicable" className="form-label">Installments Applicable</label>
-                        <select className="form-control" id="installmentsApplicable">
+                        <select className="form-control" id="installmentsApplicable" style={{fontSize:"14px"}}>
                             <option className="form-select-option">Yes</option>
                             <option className="form-select-option">No</option>
                         </select>
@@ -140,6 +142,7 @@ const CreateBatch = () => {
                           type="time"
                           className="form-control "
                           id="classroomStartTime"
+                          style={{fontSize:"14px"}}
                         />
                       </div>
                       <div className="form-group">
@@ -148,18 +151,19 @@ const CreateBatch = () => {
                           type="time"
                           className="form-control "
                           id="classroomEndTime"
+                          style={{fontSize:"14px"}}
                         />
                       </div>
                       <div className="form-group">
                         <label htmlFor="placementApplicable" className="form-label">Placement Applicable</label>
-                        <select className="form-control " id="placementApplicable">
+                        <select className="form-control " id="placementApplicable" style={{fontSize:"14px"}}>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
                       </div>
                       <div className="form-group">
                         <label htmlFor="assessmentApplicable" className="form-label">Assessment Applicable</label>
-                        <select className="form-control form-select" id="assessmentApplicable">
+                        <select className="form-control form-select" id="assessmentApplicable" style={{fontSize:"14px"}}>
                           <option  className="form-select-option" value="yes">Yes</option>
                           <option className="dropdown-item" value="no">No</option>
                         </select>
