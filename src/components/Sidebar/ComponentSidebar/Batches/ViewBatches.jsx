@@ -24,36 +24,62 @@ const ViewBatches = () => {
                                     <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
+                                                <th>Sr.No</th>
                                                 <th>Batch Code</th>
                                                 <th>Start Date</th>
                                                 <th>End Date</th>
                                                 <th>Course Name</th>
                                                 <th>Student Count</th>
+                                                <th>Classroom Start Time </th>
+                                                <th>Classroom End Time </th>
                                                 <th>Enrollment Fee</th>
                                                 <th>Mentor</th>
-                                            </tr>
+                                                <th>Batch Target Size </th>
+                                                <th>Coordinator Name </th>
+                                                <th>Batch Location</th>
+                                                <th>Status </th>
+                                                <th>Batch Type </th>
+                                                <th>Course Type </th>
+                                                <th>Batch Session </th> 
+                                                <th>Installments Applicable </th>             
+                                                <th>Placement Applicable </th>
+                                                <th>Assessment Applicable </th>
+                                         </tr>
                                         </thead>
                                        
                                         <tbody>
                                         {
                                             batches.map((element) => {
-                                                const { batch_id, batch_code, start_date, end_date, student_count, trainer_name, student_fee, course_name } = element;
-                                                const startDate = new Date(start_date);
+                                                const { batch_id, batch_code, batch_start_date,batch_end_date, course_name,batch_actual_size,classroom_start_time,classroom_end_time, student_enrollment_fee,trainer_name,batch_target_size,coordinator_name,batch_location, status, batch_type, course_type,batch_session,installments_applicable,assessment_applicable,placement_applicable } = element;
+                                                const startDate = new Date(batch_start_date);
                                                 const formattedStartDate = startDate.toLocaleDateString("en-US");
 
-                                                const endDate = new Date(start_date);
+                                                const endDate = new Date(batch_end_date);
                                                 const formattedEndDate = endDate.toLocaleDateString("en-US");
 
 
                                                 return (
                                                     <tr key={batch_id}>
+                                                        <td>{batch_id}</td>
                                                         <td>{batch_code}</td>
                                                         <td>{formattedStartDate}</td>
                                                         <td>{formattedEndDate}</td>
-                                                        <td>{course_name}</td>
-                                                        <td>{student_count}</td>
-                                                        <td>{student_fee}</td>
+                                                        <td>{course_name}</td>                                                        
+                                                        <td>{batch_actual_size}</td>
+                                                        <td>{classroom_start_time}</td>
+                                                        <td>{classroom_end_time}</td>
+                                                        <td>{student_enrollment_fee}</td>
                                                         <td>{trainer_name}</td>
+                                                        <td>{batch_target_size}</td>
+                                                        <td>{coordinator_name}</td>
+                                                        <td>{batch_location}</td>
+                                                        <td>{status}</td>
+                                                        <td>{batch_type}</td>
+                                                        <td>{course_type}</td>
+                                                        <td>{batch_session}</td>
+                                                        <td>{installments_applicable}</td>
+                                                        <td>{assessment_applicable}</td>
+                                                        <td>{placement_applicable}</td>
                                                     </tr>
                                                 );
                                             })
