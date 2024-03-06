@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Pages from "./Sidebar/Pages/Pages";
-import Component from "./Sidebar/ComponentSidebar/Component";
+import Batches from "./Sidebar/ComponentSidebar/Batches";
 import Utilities from "./Sidebar/UtilitiesSidebar/Utilities";
 const Sidebar = () => {
   return (
@@ -32,7 +32,7 @@ const Sidebar = () => {
             
 
             {/* <!-- Nav Item - Pages Collapse Menu --> */}
-            <Component/>
+            <Batches/>
 
             {/* <!-- Nav Item - Utilities Collapse Menu --> */}
             <Utilities/>          

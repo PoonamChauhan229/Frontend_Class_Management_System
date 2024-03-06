@@ -1,29 +1,47 @@
-import undraw_profile from '../utilis/img/undraw_profile.svg'
+import axios from 'axios'
+import {URL} from '../../utilis/constant'
+import {useState, useEffect } from 'react'
+import ProfileHeader from './ProfileHeader';
+
+
 
 const Topbar=()=>{
+
+    const [login, setLogin] = useState([]);
+    const [pic,setPic]=useState()
+
+    useEffect(() => {
+        // Fetch user data from backend
+        getUserData();
+    }, []);
+
+    const getUserData = async () => {
+        try {
+            const res = await axios.get(`${URL}/login/success`, { withCredentials: true });
+            //console.log("User data:", res.data);
+            // Update login context with user data
+            setLogin(res.data);
+            setPic(res.data.photos[0].value)
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
+    
     return(
         <>
                 {/* <!-- Topbar --> */}
+                
+                
                 <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+                    <ProfileHeader/>
+                {/* <button onClick={()=>logout()}>Logout</button> */}
                     {/* <!-- Sidebar Toggle (Topbar) --> */}
                     <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
                         <i className="fa fa-bars"></i>
                     </button>
 
-                    {/* <!-- Topbar Search --> */}
-                    <form
-                        className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div className="input-group">
-                            <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2"/>
-                            <div className="input-group-append">
-                                <button className="btn btn-primary" type="button">
-                                    <i className="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                                      
+
 
                     {/* <!-- Topbar Navbar --> */}
                     <ul className="navbar-nav ml-auto">
@@ -172,13 +190,14 @@ const Topbar=()=>{
                         <div className="topbar-divider d-none d-sm-block"></div>
 
                         {/* <!-- Nav Item - User Information --> */}
+                        
                         <li className="nav-item dropdown no-arrow">
-                            <a className="nav-link dropdown-toggle" href="/" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span className="nav-link dropdown-toggle" id="userDropdown" role="button" type="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span className="mr-2 d-none d-lg-inline text-gray-600 small">{login.displayName}</span>
                                 <img className="img-profile rounded-circle" alt=""
-                                    src={undraw_profile}/>
-                            </a>
+                                    src={pic}/>
+                            </span>
                             {/* <!-- Dropdown - User Information --> */}
                             <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -201,6 +220,9 @@ const Topbar=()=>{
                                 </a>
                             </div>
                         </li>
+
+                <ProfileHeader/>
+                       
 
                     </ul>
 

@@ -3,7 +3,7 @@ import Body from "./components/Body";
 import { Routes, Route } from "react-router-dom"
 import AllButtons from "./components/Sidebar/ComponentSidebar/Button/AllButtons";
 import Sidebar from "./components/Sidebar";
-import Topbar from "./components/Topbar";
+
 import Footer from "./components/Footer";
 import AllCards from "./components/Sidebar/ComponentSidebar/Cards/AllCards";
 import AllColor from "./components/Sidebar/UtilitiesSidebar/Color/AllColor";
@@ -14,6 +14,8 @@ import Table from "./components/Sidebar/Table";
 import Charts from "./components/Sidebar/Charts";
 import ViewBatches from './components/Sidebar/ComponentSidebar/Batches/ViewBatches';
 import CreateBatch from './components/Sidebar/ComponentSidebar/Batches/CreateBatch';
+import Topbar from './components/Navbar/Topbar';
+
 
 const MainComponentRoutes = () => {
 

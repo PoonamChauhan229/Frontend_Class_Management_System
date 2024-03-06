@@ -80,7 +80,7 @@ const Body = () => {
   return (
     <div>
         <FourTaskStatusCard/>
-       <ChartsHome lineData={EarningData} pieData={pieData}/>
+        <ChartsHome lineData={EarningData} pieData={pieData}/>
         <ProjectIllustrations/>
     </div>
   )
