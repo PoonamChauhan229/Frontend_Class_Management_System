@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { URL } from '../../utilis/constant'
 import axios from 'axios'
 import loginContext from '../../utilis/useContext/loginContext'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -12,16 +13,7 @@ const Login = () => {
         window.location.href = `${URL}/auth/google`
      
     }
-    const handleLoginSuccess = async (cb) => {
-       cb()
-        try {
-            const res = await axios.get(`${URL}/login/success`);
-            // Assuming res.data contains the necessary login information
-            setLogin(res.data);
-        } catch (error) {
-            console.error("Error while fetching user data:", error);
-        }
-    };
+
   return (
     <div class="container">
     <div class="row justify-content-center">
@@ -79,7 +71,7 @@ const Login = () => {
                                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <Link class="small" to="/register">Create an Account!</Link>
                                 </div>
                             </div>
                         </div>

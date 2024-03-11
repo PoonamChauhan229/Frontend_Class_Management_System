@@ -1,6 +1,32 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 
 const Register = () => {
+
+const [firstName,setFirstName]=useState("")
+const [lastName,setLastName]=useState("")
+const [email,setEmail]=useState("")
+const [password,setPassword]=useState("")
+const [repeatPassword,setRepeatPassword]=useState("")
+
+const handleSubmit=(e)=>{
+    e.preventDefault();
+    const formData={
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
+        repeat_password: repeatPassword
+
+    }
+    console.log(formData)
+    submitFormData()
+}
+
+const submitFormData=async()=>{
+    let res=axios.post()
+}
+
   return (
     <div className="container">
 
@@ -13,39 +39,39 @@ const Register = () => {
                         <div className="text-center">
                             <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form className="user">
+                        <form className="user" onSubmit={handleSubmit}>
                             <div className="form-group row">
                                 <div className="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                        placeholder="First Name"/>
+                                    <input type="text" className="form-control " id="exampleFirstName"
+                                        placeholder="First Name" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
                                 </div>
                                 <div className="col-sm-6">
-                                    <input type="text" className="form-control form-control-user" id="exampleLastName"
-                                        placeholder="Last Name"/>
+                                    <input type="text" className="form-control " id="exampleLastName"
+                                        placeholder="Last Name" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
                                 </div>
                             </div>
                             <div className="form-group">
-                                <input type="email" className="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Email Address"/>
+                                <input type="email" className="form-control " id="exampleInputEmail"
+                                    placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                             </div>
                             <div className="form-group row">
                                 <div className="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" className="form-control form-control-user"
-                                        id="exampleInputPassword" placeholder="Password"/>
+                                    <input type="password" className="form-control "
+                                        id="exampleInputPassword" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                 </div>
                                 <div className="col-sm-6">
-                                    <input type="password" className="form-control form-control-user"
-                                        id="exampleRepeatPassword" placeholder="Repeat Password"/>
+                                    <input type="password" className="form-control "
+                                        id="exampleRepeatPassword" placeholder="Repeat Password" value={repeatPassword} onChange={(e)=>setRepeatPassword(e.target.value)}/>
                                 </div>
                             </div>
-                            <a href="login.html" className="btn btn-primary btn-user btn-block">
+                            <button type='submit' className="btn btn-primary  btn-block">
                                 Register Account
-                            </a>
+                            </button>
                             <hr/>
-                            <a href="index.html" className="btn btn-google btn-user btn-block">
+                            <a href="index.html" className="btn btn-google btn-block">
                                 <i className="fab fa-google fa-fw"></i> Register with Google
                             </a>
-                            <a href="index.html" className="btn btn-facebook btn-user btn-block">
+                            <a href="index.html" className="btn btn-facebook btn-block">
                                 <i className="fab fa-facebook-f fa-fw"></i> Register with Facebook
                             </a>
                         </form>
@@ -62,7 +88,7 @@ const Register = () => {
         </div>
     </div>
 
-</div>
+    </div>
   )
 }
 
