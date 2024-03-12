@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import {URL} from '../../utilis/constant'
 
 const Register = () => {
 
@@ -7,7 +8,8 @@ const [firstName,setFirstName]=useState("")
 const [lastName,setLastName]=useState("")
 const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
-const [repeatPassword,setRepeatPassword]=useState("")
+const [selectedRole, setSelectedRole] = useState('');
+
 
 const handleSubmit=(e)=>{
     e.preventDefault();
@@ -16,15 +18,22 @@ const handleSubmit=(e)=>{
         last_name: lastName,
         email: email,
         password: password,
-        repeat_password: repeatPassword
+        role:selectedRole
 
     }
     console.log(formData)
-    submitFormData()
+   submitFormData(formData)
 }
 
-const submitFormData=async()=>{
-    let res=axios.post()
+const submitFormData=async(data)=>{
+    
+    console.log(data)
+    // const {first_name,last_name,email,password,role}=data
+    // console.log(first_name,last_name,email,password,role)
+
+    let res=await axios.post(`${URL}/adduser`,data);
+    console.log(res)
+
 }
 
   return (
@@ -60,8 +69,15 @@ const submitFormData=async()=>{
                                         id="exampleInputPassword" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                                 </div>
                                 <div className="col-sm-6">
-                                    <input type="password" className="form-control "
-                                        id="exampleRepeatPassword" placeholder="Repeat Password" value={repeatPassword} onChange={(e)=>setRepeatPassword(e.target.value)}/>
+
+                                <select id="role" value={selectedRole} onChange={(e)=>setSelectedRole(e.target.value)} className="form-control">
+                                            <option value="" disabled>Select Role</option>
+                                            <option value="staff">Staff</option>
+                                            <option value="student">Student</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="trainer">Trainer</option>
+                              </select>
+
                                 </div>
                             </div>
                             <button type='submit' className="btn btn-primary  btn-block">
